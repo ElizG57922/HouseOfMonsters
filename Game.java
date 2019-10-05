@@ -11,7 +11,7 @@ public class Game {
 	public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
 
-		//  S  M  I  P  T  B
+		//               S  M  I  P  T
 		int [] points = {0, 0, 0, 0, 0};
 		int [] daysSpent = new int[4];
 		intro(kb);
@@ -36,6 +36,8 @@ public class Game {
 			else
 				day1MisPath(kb, points, daysSpent);
 		}
+		else if (response == 443)
+			day1BlinkPath(kb);
 		else
 			day1MonsterPath(kb, points, daysSpent);
 		printPoints(points);
@@ -75,7 +77,7 @@ public class Game {
 	}
 	public static void day6(Scanner kb, int[] points, int[] daysSpent, String name) {
 		day6Intro(kb);
-		if(points[0] == 1 && points[1] == 1 && points[2] == 1 && points[3] == 1 && points[4] == 1)
+		if(points[0] == 1 && points[1] == 1 && points[2] == 1 && points[3] == 1)
 			startBlinkPath(kb);
 		else if (points[0] >= 3)
 			endSpin(kb);
@@ -143,8 +145,6 @@ public class Game {
 			else if(daysSpent[1] == 4)
 				day5MisPath(kb, points);
 		}
-		else if (response == 443)
-			day1BlinkPath(kb);
 	}
 	public static void intro(Scanner kb) {
 		int response = 0;
@@ -196,7 +196,7 @@ public class Game {
 			System.out.println("2: Venture off on your own");
 			System.out.print("What will you do? ");
 			response = kb.nextInt();
-		} while(response != 1 && response != 2);
+		} while(response != 1 && response != 2 && response != 443);
 		return response;
 	}
 	public static void day2Intro(Scanner kb, int[] points) {
@@ -376,11 +376,11 @@ public class Game {
 	}
 	public static void day4SpinPath(Scanner kb, int[] points, int[] daysSpent) {
 		daysSpent[0]++;
-		System.out.println("\nSpinner, Spinner, in a web.");
+		System.out.println("\nSpinner, Spinner, in a web.\n");
 		kb.nextLine();
-		System.out.println("Spinner is an awesome spi-derp.");
+		System.out.println("Spinner is an awesome spi-derp.\n");
 		kb.nextLine();
-		System.out.println("I hope you have no regrets.");
+		System.out.println("I hope you have no regrets.\n");
 		kb.nextLine();
 		System.out.println("Because I certainly do after writing this.\n");
 		kb.nextLine();
@@ -486,7 +486,7 @@ public class Game {
 			System.out.print("Apparently taking this as a compliment, Misty blushes pale pink. ");
 			misPoints++;
 		}
-		System.out.println("She smiles at you and waves. The butterfly on her head flutters for a moment before settling\n"
+		System.out.println("She smiles at you and waves. The butterfly on her head\nflutters for a moment before settling"
 				+ "down again.\n");
 		kb.nextLine();
 		System.out.println("Terrence has to go back to his job, and so do you, but at lunchtime, the three of you reconvene.\n"
@@ -520,7 +520,7 @@ public class Game {
 		}
 		else {
 			System.out.println("\"Come on, Terrence, I have to see this!\" you say, joining Misty in her encouragement.\n"
-					+ "Terrence rolls his eyes and breaks a piece off of his Food Bar. With a spectacular toss, he makes"
+					+ "Terrence rolls his eyes and breaks a piece off of his Food Bar. With a spectacular toss, he makes\n"
 					+ "the catch with his mouth before declaring that the rest of the food has to go in his mouth the normal way\n"
 					+ "or he'll be starved. Misty catches your attention and giggles.\n");
 			misPoints++;
@@ -569,7 +569,7 @@ public class Game {
 		}
 		else {
 			System.out.println("You head off to look for the Class Eight. He's bent over one of the smaller cages, pulling\n"
-					+ "something away from furry creature on the ground. It's a monster! Before you can run for help,\n"
+					+ "something away from the furry creature on the ground. It's a monster! Before you can run for help,\n"
 					+ "Terrence pulls his mop out of the creature's grasp and calls out, \"This is a phase mole! They aren't\n"
 					+ "dangerous, but they get out all the time.\"\n");
 			kb.nextLine();
@@ -699,6 +699,7 @@ public class Game {
 		kb.nextLine();
 		System.out.println();
 		if(response == 1) {
+			misPoints ++;
 			System.out.println("You lean back against the glass, thinking of a good tale to tell. After a bit of thinking,\n"
 					+ "you settle on a fantasy one about a magical shaft of silver light. It isn't as good as you remember\n"
 					+ "it to be, but it brings back memories of childhood and true friends and summers long ago but not forgotten.\n");
@@ -1256,7 +1257,7 @@ public class Game {
 			System.out.println("\"Oh! Silly me! I completely forgot that you had a job to get back to!\" She giggles.\n"
 					+ "\"I once had a job where I sorted sea shells! I know I'm a princess, but-\"\n");
 			kb.nextLine();
-			System.out.println("\"For the love of all that you can find crawling underneath a sandwitch, can you please\n"
+			System.out.println("\"For the love of all that you can find crawling underneath a sandwich, can you please\n"
 					+ "just shut up?!\"\n");
 			kb.nextLine();
 			System.out.println("It's the other monster who says this. She has her hands pressed over her ears and she looks\n"
@@ -1299,6 +1300,7 @@ public class Game {
 		}
 	}
 	public static void day3MonsterPath(Scanner kb, int[] points, int[] daysSpent) {
+		daysSpent[2]++;
 		int response = 0;
 		int prisPoints = 0;
 		int merPoints = 0;
@@ -1323,7 +1325,6 @@ public class Game {
 		kb.nextLine();
 		System.out.println();
 		if(response == 1) {
-			daysSpent[2]++;
 			System.out.println("\"...so he asked me to pick out an outfit for the baby! But I just couldn't decide between\n"
 					+ "the red sea silk or the green!\"\n");
 			kb.nextLine();
@@ -1515,7 +1516,7 @@ public class Game {
 		kb.nextLine();
 		System.out.println("This friendship thing is getting weird.\n");
 		kb.nextLine();
-		System.out.println("Merina grins on, oblivious to whatever you may or not be thinking. \"Let's plaaaaay!\"\n");
+		System.out.println("Merina grins on, oblivious to whatever you may or may not be thinking. \"Let's plaaaaay!\"\n");
 		kb.nextLine();
 		System.out.println();
 		System.out.print("I need you to give me a noun: ");
@@ -1739,7 +1740,7 @@ public class Game {
 		System.out.println("Prismec creeps down the hall. She turns back to make sure you're following, and her clothes\n"
 				+ "melt into those of a Class Six. She grins.\n");
 		kb.nextLine();
-		System.out.println("The hall branches just up ahead. Prismec produced a spool of thread and hands you one end of\n"
+		System.out.println("The hall branches just up ahead. Prismec produces a spool of thread and hands you one end of\n"
 				+ "it. \"Tape it to the wall on your side,\" she instructs you, measuring about a foot above the ground.\n"
 				+ "You construct the tripwire and hide off to the side with the monster girl.\n");
 		kb.nextLine();
@@ -1968,12 +1969,12 @@ public class Game {
 		System.out.println("\"Good. Now, I am attempting to assess the intelligence of humans. Unfortunately, due to the\n"
 				+ "internet having all of the answers, this instead will be a quiz about what routes of the House Of Monsters\n"
 				+ "game you have completed. Please complete all routes and then answer the following\n"
-				+ "questions to the best of your ability. Question one: What are Misty's butterflies?\"\n");
+				+ "questions to the best of your ability. Question one: What color can Misty's butterflies turn?\"\n");
 		kb.nextLine();
-		System.out.println("1: Spiders");
-		System.out.println("2: Vampires");
-		System.out.println("3: Mist");
-		System.out.println("4: Nectarids");
+		System.out.println("1: Red");
+		System.out.println("2: Blue");
+		System.out.println("3: Green");
+		System.out.println("4: Yellow");
 		System.out.print("What will you say? ");
 		response = kb.nextInt();
 		kb.nextLine();
