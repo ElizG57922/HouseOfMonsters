@@ -406,7 +406,7 @@ public class Game {
 				+ "executed with an almost cartoony level of violence, but Spinner comes out without a single scratch.\n");
 		kb.nextLine();
 		System.out.println("Then Spinner turns to you. It's awesome. You love him so much (as a friend). You do not wonder\n"
-				+ "why the writing quality is so bad. You do not wonder this because you are too busy admiring his anthro.\n"
+				+ "why the writing quality is so bad. You do not wonder this because you are too busy admiring his anthro\n"
 				+ "form. It is so awesome. You are now making out (in an absolutely platonic way).\n");
 		kb.nextLine();
 		System.out.println("If there was a picture here, you would totally be swooning. You have won the friendship sim. ;D\n");
@@ -1676,7 +1676,7 @@ public class Game {
 		System.out.println("\"Good.\"\n");
 		kb.nextLine();
 		System.out.println("\"Tbh, I was getting kinda worked up about this.\" Her outline flickers, and suddenly she's a\n"
-				+ "perfect copy of you. \"Tell me honetly, though, can I trust you?\"\n");
+				+ "perfect copy of you. \"Tell me honestly, though, can I trust you?\"\n");
 		kb.nextLine();
 		do {
 			System.out.println("1: Yes");
