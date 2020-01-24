@@ -7,7 +7,7 @@ package hom;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Game {
+public class HOM {
 	public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
 
@@ -91,8 +91,6 @@ public class Game {
 			endTer(kb, name);
 		else
 			endBad(kb);
-		kb.nextLine();
-		System.out.println("Game end.");
 	}
 	public static int getResponse(Scanner kb, int[] points, int[] daysSpent) {
 		System.out.println("1: Check on Spinner");
@@ -412,6 +410,7 @@ public class Game {
 		System.out.println("If there was a picture here, you would totally be swooning. You have won the friendship sim. ;D\n");
 		kb.nextLine();
 		System.out.println("gg\n");
+                new JavaSwingImage(256, 300, "SpinEnd");
 	}
 	public static void day1MisPath(Scanner kb, int[] points, int[] daysSpent) {
 		int response = 0;
@@ -781,6 +780,7 @@ public class Game {
 				+ "Through the hazy surface, butterflies swirl, and a figure waves at Misty in the distance.\n");
 		kb.nextLine();
 		System.out.println("She is home.\n");
+              new JavaSwingImage(256, 300, "MistyEnd");
 	}
 	public static void day4TerPath(Scanner kb, int[] points, int[] daysSpent) {
 		int response = 0;
@@ -1189,6 +1189,7 @@ public class Game {
 				+ "lighten the sadness. You return it. Misty may be gone, but at least you still have Terrence.\n");
 		kb.nextLine();
 		System.out.println("And honestly, you wouldn't have it any other way.\n");
+              new JavaSwingImage(256, 300, "TerEnd");
 	}
 	public static void day1MonsterPath(Scanner kb, int[] points, int[] daysSpent) {
 		daysSpent[2]++;
@@ -1592,6 +1593,7 @@ public class Game {
 			kb.nextLine();
 			System.out.println("You enjoy your new life as a magical mer-squirrel. You make lots of friends and on Merina's\n"
 					+ "birthday, you get her a wall. She loves it and talks to it every day.\n");
+                         new JavaSwingImage(256, 300, "MerEnd");
 		}
 		else {
 			System.out.println("\"Then goodbye!\" Merina blows you a quick, fishy kiss as she and her father disappear under the\n"
@@ -1917,6 +1919,7 @@ public class Game {
 				+ "and then you are free.\n");
 		kb.nextLine();
 		System.out.println("You have to admit, this is quite a ride.\n");
+                new JavaSwingImage(256, 300, "PrisEnd");
 	}
 	public static void startBlinkPath(Scanner kb) {
 		int response = 0;
@@ -2103,6 +2106,7 @@ public class Game {
 	}
 	public static void endBad(Scanner kb) {
 		System.out.println("And you die.");
+                new JavaSwingImage(256, 300, "Death");
 	}
 	public static void printPoints(int[] points) {
 		System.out.println();
