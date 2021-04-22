@@ -1,6 +1,6 @@
 package hom;
 /*
- * Hello universe. This game was created by Elizabeth Gonzalez on 9/30/2019.
+ * Hello universe. This game was created by Elizabeth Gonzalez.
  * She tried.
  */
 
@@ -16,9 +16,7 @@ public class Text {
 			try {
 				Thread.sleep(500);
 			}
-			catch (InterruptedException e) {
-
-			}
+			catch (InterruptedException e) {}
 		}
 		waiting = true;
 	}
@@ -41,12 +39,13 @@ public class Text {
 			day4(g, points, daysSpent, name);
 			day5(g, points, daysSpent, name);
 			day6(g, points, daysSpent, name);
+			g.getGP().addText("\n\nThe end.\n\nExit to close the game.");
+			waitForInput();
 		}
 		catch(InterruptedException e) {}
 	}
 	public static void day1(Visuals g, int[] points, int[] daysSpent) {
 		String response = day1Intro(g);
-
 		if (response.equals("1")) {
 			response = day1HelpPath(g);
 
@@ -176,12 +175,12 @@ public class Text {
 			g.getGP().addText(response);
 			if(response.equals("1")) {
 				g.getGP().addText("\n\nHouse of Monsters is set in an underground facility that holds, you guessed it, monsters. As"
-						+ " befits such an interesting setting, the main character is a...janitor. This, however, is not his story."
-						+ " It's yours. And your goal is to make friends with the monsters. How very reallistic and sweet. Press the Next button.");
+						+ " befits such an interesting setting, the main character is...you!"
+						+ " And your goal is to make friends with the monsters! How very reallistic and sweet. Press the Next button.");
 				waitForInput();
-				g.getGP().addText("\n\nAnyway, the society is divided into 8 classes based on psychic ability, because your ability to"
-						+ " run the government obviously depends on whether or not you can lift a vase with your mind. You are a"
-						+ " Class Five who's researching monster behavior. You can be a boy, girl, or whatever - your character's gender isn't specified."
+				g.getGP().addText("\n\nAnyway, the society is divided into 5 classes based on psychic ability, with 1s being"
+						+ " godlike rulers and nonpsychic 5s hardly getting by. 10 out of 10 society, I say. You are a Class Three who's"
+						+ " researching monster behavior. You can be a boy, girl, or whatever - your character's gender isn't specified."
 						+ " You talk to the monsters and sometimes make choices - good answers give you points. If you get enough"
 						+ " good answers, you can score a character point at the end of the day. The goal is to get a certain number"
 						+ " of these, usually 3, but more for the harder characters. Hint: Merina and Spinner are easy.");
@@ -203,7 +202,7 @@ public class Text {
 			waitForInput();
 			g.getGP().addText("\n\nYou exit the elevator and look around. To put it plainly, this place needs some serious TLC."
 					+ " It looks like the very foundations of the building want to give up and die. But hey, at least you"
-					+ " aren't in it alone. There's one other person in this room, a Class Eight janitor, by the looks"
+					+ " aren't in it alone. There's one other person in this room, a Class Five janitor, by the looks"
 					+ " of him. Maybe he can help you figure this place out.");
 			waitForInput();
 			do {
@@ -226,7 +225,7 @@ public class Text {
 	}
 	public static void day3Intro(Visuals g, int[] points) {
 		g.getGP().addText("\n\nDay 3");
-		g.getGP().addText("\n\nYet another sunny, cloudless, over 100 degree day has started. Your boss, a Class Three named"
+		g.getGP().addText("\n\nYet another sunny, cloudless, over 100 degree day has started. Your boss, a Class Two named"
 				+ " Felicia, passes by you in the hall and nods curtly. You head off to start work, wondering what adventures"
 				+ " this day will bring.");
 	}
@@ -277,9 +276,7 @@ public class Text {
 					+ " giant spider, but instead of having eight arms, you count 12. Some of them end in claws and others"
 					+ " in spikes, and one pair of them are odd little cones whose purpose you cannot begin to guess."
 					+ " He sees you (lol im spi-derp) and his purple eyes narrow. \"Hello there :P,\" he says.");
-
 			waitForInput();
-
 			do {
 				g.getGP().addText("\n\n1: Answer the monster");
 				g.getGP().addText("\n2: Ignore him and run back to Terrence");
@@ -374,7 +371,7 @@ public class Text {
 					+ " down to the end of this magical time. You wonder, are you really ready to be friends with Spinner?");
 			waitForInput();
 			g.getGP().addText("\n\nThere may still be time left. If you back out now, you might still have a"
-					+ " chance to get a good ending. Are you really ready to commit to this spider?");
+					+ " chance to get a different ending. Are you really ready to commit to this spider?");
 			waitForInput();
 			do {
 				g.getGP().addText("\n\n1: I would give him my mind, body, soul, and (most importantly) heart. I am ready for this.");
@@ -430,10 +427,10 @@ public class Text {
 	public static void endSpin(Visuals g) {
 		try {
 			g.getGP().addText("\n\nSpinner drops from the ceiling, landing between you and the monster. It is quick, brutal, and"
-					+ " executed with an almost cartoony level of violence, but Spinner comes out without a single scratch.");
+					+ " executed with an almost cartoonish level of violence, but Spinner comes out without a single scratch.");
 			waitForInput();
 			g.getGP().addText("\n\nThen Spinner turns to you. It's awesome. You love him so much (as a friend). You do not wonder"
-					+ " why the writing quality is so bad. You do not wonder this because you are too busy admiring his anthro"
+					+ " why the writing quality of this branch is so bad. You do not wonder this because you are too busy admiring his anthro"
 					+ " form. It is so awesome. You are now making out (in an absolutely platonic way).");
 			waitForInput();
 			g.getGP().addText("\n\nIf there was a picture here, you would totally be swooning. You have won the friendship sim. ;D");
@@ -446,7 +443,7 @@ public class Text {
 		String response = "0";
 		try {
 			g.getGP().addText("\n\nThe monster mumbles something about u suk at manners, but does not attempt to make conversation"
-					+ " again. You study a pair of rodent-like monsters in peace and are heading out when you see Terrence.");
+					+ " again. You cannot find Terrence, so you study a pair of rodent monsters in peace. When you head out, you see the janitor.");
 			waitForInput();
 			do {
 				g.getGP().addText("\n\n1: Wave him over. You want to talk.");
@@ -501,8 +498,8 @@ public class Text {
 				terPoints++;
 			}
 			g.getGP().addText("\n\nEventually, you both stop. The monster in front of you presses her nose against the glass and chirps"
-					+ " happily at Terrence. Her eyes are black and glassy, and there is a blue butterfly resting on her head."
-					+ " She notices you and tilts her head to the side, apparently confused. \"Misty, this is " + name + " ,\""
+					+ " happily at Terrence. Her eyes are black and glassy, and there is a white butterfly resting on her head."
+					+ " She notices you and tilts her head to the side, apparently confused. \"Misty, this is " + name + ",\""
 					+ " Terrence introduces you.");
 			waitForInput();
 			do {
@@ -514,10 +511,10 @@ public class Text {
 			} while(!response.equals("1") && !response.equals("2"));
 			g.getGP().addText(response);
 			if(response.equals("2")) {
-				g.getGP().addText(" Apparently taking this as a compliment, Misty blushes pale pink. ");
+				g.getGP().addText("\n\nApparently taking this as a compliment, Misty blushes pale pink.");
 				misPoints++;
 			}
-			g.getGP().addText("\n\nShe smiles at you and waves. The butterfly on her headflutters for a moment before settling"
+			g.getGP().addText("\n\nShe smiles at you and waves. The butterfly on her head flutters for a moment before settling"
 					+ " down again.");
 			waitForInput();
 			g.getGP().addText("\n\nTerrence has to go back to his job, and so do you, but at lunchtime, the three of you reconvene."
@@ -544,9 +541,8 @@ public class Text {
 			if(response.equals("1")) {
 				g.getGP().addText("\n\nYou've had your fun, and you decide to give the janitor a break. \"All right, we'll just have"
 						+ " to see Terrence's award winning food toss some other day,\" you smile. Misty shrugs, and Terrence folds"
-						+ " his arms, mumbling something about not being a trick monkey. Still, the look he gives you has a hint of"
-						+ " gratefulness in it. It's not often that somebody sides with a Class Eight, even for something unimportant"
-						+ " like this.");
+						+ " his arms, mumbling something about not being a trick monkey. Still, the look he gives you is one of"
+						+ " gratefulness. It's not often that somebody sides with a Class Five, even for something unimportant like this.");
 				terPoints++;
 			}
 			else {
@@ -591,18 +587,17 @@ public class Text {
 				g.getGP().addText("\n\nWhen you run out of things to say, it's so quiet that you can hear the monsters breathing"
 						+ " heavily in their prisons. A chirp breaks the silence. You turn and see Misty tapping on the glass."
 						+ " When she realizes she's got your attention, she starts charading the act of eating with a spoon."
-						+ " \"What are you doing? Are you needing to eat?\" you ask, remembering that it's your job to feed the"
-						+ " monsters. She shakes her head and makes a series of gestures with her hands. You understand. She is"
-						+ " trying to teach you what the word \"eat\" is in her language.");
+						+ " \"What are you doing? Are you needing to eat?\" you ask She shakes her head and makes a series of gestures"
+						+ " with her hands. You understand. She is trying to teach you what the word \"eat\" is in her language.");
 				waitForInput();
 				g.getGP().addText("\n\nYou learn a few more words: \"butterfly,\" \"light,\" \"see,\" before Terrence finally jogs"
 						+ " up. \"Hi guys,\" he says, putting one hand on the wall. \"Sorry I'm late. One of the smaller monsters"
 						+ " got out and tried to eat my mop.\"");
 			}
 			else {
-				g.getGP().addText("\n\nYou head off to look for the Class Eight. He's bent over one of the smaller cages, pulling"
+				g.getGP().addText("\n\nYou head off to look for the Class Five. He's bent over one of the smaller cages, pulling"
 						+ " something away from the furry creature on the ground. It's a monster! Before you can run for help,"
-						+ " Terrence pulls his mop out of the creature's grasp and calls out, \"This is a phase mole! They aren't"
+						+ " Terrence pulls his mop out of the creature's grasp and calls out, \"It's okay! This is a phase mole! They aren't"
 						+ " dangerous, but they get out all the time.\"");
 				waitForInput();
 				g.getGP().addText("\n\nIt isn't exactly the most comforting speech, but it makes you take a second look at the creature."
@@ -610,12 +605,12 @@ public class Text {
 						+ " mop once again and pulls.");
 				terPoints++;
 				waitForInput();
-				g.getGP().addText("\n\nIt's actually kind of cute. Feeling a little bolder, you put on your gloves and pry it away"
+				g.getGP().addText("\n\nIt's actually kind of cute. Feeling a little bolder, you reach out with your mind and and pry it away"
 						+ " from its wooden treasure. You plop it back into its cage and it wanders around. \"Thanks,\" says"
 						+ " Terrence. You both head back to Misty.");
 			}
 			waitForInput();
-			g.getGP().addText("\n\nThe three of you sit down to lunch. After a few lazy comments about the weather, Terrece starts"
+			g.getGP().addText("\n\nThe three of you sit down to lunch. After a few lazy comments about the weather, Terrence starts"
 					+ " complaining about his boss. According to him, she's incredibly strict and most of all, rude. You don't"
 					+ " know Felicia too well, but she didn't strike you as particularly awful.");
 			waitForInput();
@@ -681,7 +676,7 @@ public class Text {
 			}
 			g.getGP().addText("\n\nMisty chirps happily at your questions. You're not quite sure if she understands all of them,"
 					+ " and you know that you don't understand all of her answers, but it's still a good time. She pantomimes"
-					+ " things out and the two of you play charades while her little blue butterflies flutter.");
+					+ " things out and the two of you play charades while her little white butterflies flutter.");
 			waitForInput();
 			g.getGP().addText("\n\nAfter a little while, you notice that she's getting tired.");
 			waitForInput();
@@ -714,6 +709,7 @@ public class Text {
 				g.getGP().addText("\n\nYou attempt to break the sound barrier. Misty beams with pride, and her face suddenly reddens"
 						+ " because just about every monster in the hallway starts shouting that you have no idea what peace and quiet"
 						+ " is. Your face floods with blush.");
+				misPoints++;
 			}
 			waitForInput();
 			g.getGP().addText("\n\nMisty's butterflies seem to be tiring out. She sits down and moves a little closer to the glass.");
@@ -746,21 +742,20 @@ public class Text {
 			waitForInput();
 			g.getGP().addText("\n\nThat's when the sirens start.");
 			waitForInput();
-			g.getGP().addText("\n\nYour first though is, \"Monster escape!\" But that isn't it. The people you see running aren't"
+			g.getGP().addText("\n\nYour first though is, \"Breach!\" But that isn't it. The people you see running aren't"
 					+ " moving quickly enough for that.");
 			waitForInput();
-			g.getGP().addText("\n\nThe crowd is too thick. Most of the people are Class Sixes and Sevens who let you through once they"
-					+ " realize your status. Still, a pair of medics, both Class Fives, shoo you back as they try to assess the"
+			g.getGP().addText("\n\nThe crowd is too thick. Most of the people are Class Fours who let you through once they"
+					+ " realize your status. Still, a pair of medics, both Class Threes, shoo you back as they try to assess the"
 					+ " situation for themselves.");
 			waitForInput();
-			g.getGP().addText("\n\nThere has been a murder. Your own boss, Felicia, has already admitted her guilt, although she"
-					+ " claims that it was in self defence. She sits in the corner, still in shock as the Class Four doctor checks"
-					+ " her for wounds. She is gasping.");
+			g.getGP().addText("\n\nThere has been an attack. Your own boss, Felicia, sits in the corner, in shock as a Class Three doctor"
+					+ " bandages her wounds. She is gasping.");
 			waitForInput();
-			g.getGP().addText("\n\nTerrence, the Class Eight janitor, is dead.");
+			g.getGP().addText("\n\nTerrence, the Class Five janitor, is dead.");
 			waitForInput();
 			g.getGP().addText("\n\nYou leave the scene, surprised and a little frightened, and head back to Misty. Terrence may have"
-					+ " only been a Class Eight, but he was still her friend. Misty cries and cries.");
+					+ " only been a Class Five, but he was still her friend. Misty is devastated.");
 			if(misPoints >= 1)
 				points[1]++;
 			points[4] = 0;
@@ -799,19 +794,19 @@ public class Text {
 	}
 	public static void endMisty(Visuals g) {
 		try {
-			g.getGP().addText("\n\nAll of a sudden, frosty blue butterflies surround the creature. At first, you take it as a welcome"
+			g.getGP().addText("\n\nAll of a sudden, pale white butterflies surround the creature. At first, you take it as a welcome"
 					+ " distraction. While they swarm the monster, you take your chance and run. Behind you, your would-be attacker growls."
 					+ " Suddenly, it lets out a scarp cry.");
 			waitForInput();
-			g.getGP().addText("\n\nThe floor underneath it has turned to ice. Frost cakes its fur. The monster howls in pain and blindly runs.");
+			g.getGP().addText("\n\nThe butterflies swarm the monster, turning crimson as they drain its blood. The monster howls in pain and blindly runs.");
 			waitForInput();
 			g.getGP().addText("\n\nYou hear Misty's familiar chirping. The butterflies flock to her, and once they are all accounted for,"
 					+ " She slips into your arms for a moment before the two of you take off running.");
 			waitForInput();
-			g.getGP().addText("\n\nWhen the portal opens up to take Misty home, she turns around and squeezes your hand. This is goodbye."
-					+ " Through the hazy surface, butterflies swirl, and a figure waves at Misty in the distance.");
+			g.getGP().addText("\n\nWhen you get to the surface, she turns around and squeezes your hand. You made it. Both of you."
+					+ " Through the morning light, butterflies swirl, and the sun rises in the distance.");
 			waitForInput();
-			g.getGP().addText("\n\nShe is home.");
+			g.getGP().addText("\n\nYou are home.");
 			waitForInput();
 		} catch (InterruptedException e) {}
 	}
@@ -824,9 +819,8 @@ public class Text {
 			g.getGP().addText("\n\nAh, there's Terrence. He's mopping up a spill on the floor, and the boss, Felicia, is watching him."
 					+ " They seem to be busy. You hang back and listen.");
 			waitForInput();
-			g.getGP().addText("\n\n\"You missed a spot,\" says Felicia. Terrence moves to clean it. Suddenly, the Class Three grabs"
+			g.getGP().addText("\n\n\"You missed a spot,\" says Felicia. Terrence moves to clean it. Suddenly, the Class Two grabs"
 					+ " for the mop and snatches it.");
-
 			waitForInput();
 			g.getGP().addText("\n\n\"I got it,\" says Felicia, daintily brushing the head of the mop against the floor. She smiles,"
 					+ " handing it back to the janitor.");
@@ -855,19 +849,19 @@ public class Text {
 				return;
 			}
 			g.getGP().addText("\n\nFelicia hands the mop back, and this time, Terrence gets to take it. He resumes his work, but"
-					+ " Felicia stays where she is. She bites her lip.");
+					+ " Felicia stays where she is. She folds her arms.");
 			waitForInput();
-			g.getGP().addText("\n\n\"I had this sudden memory of how a few years ago, there was a huge influx of cheesey romance"
-					+ " novels. It was all anybody talked about. Did you ever get into one of those?\"");
+			g.getGP().addText("\n\n\"I was thinking about how to improve the hiring process, and I'm deciding to add a literacy test"
+					+ " to the application. Do you think that would affect your canidacy for this job?\"");
 			waitForInput();
-			g.getGP().addText("\n\n\"No ma'am, not really.\"");
+			g.getGP().addText("\n\nHe barely looks up. \"No, I don't think it would.\"");
 			waitForInput();
-			g.getGP().addText("\n\n\"Of course you didn't.\" Her eyes narrow slightly. \"You're just a stupid Class Eight.\"");
+			g.getGP().addText("\n\n\"A shame.\" Her eyes narrow slightly. \"You're just a stupid Class Five.\"");
 			waitForInput();
 			g.getGP().addText("\n\nTerrence focuses a little harder on the floor.");
 			waitForInput();
-			g.getGP().addText("\n\n\"Can you even read?\" Felicia asks, pushing herself off of the wall to circle around"
-					+ " Terrence. \"Sometimes I wonder why Class Eights are even kept around. How do you function without"
+			g.getGP().addText("\n\n\"Why would anyone even bother to teach you to read?\" Felicia asks, pushing herself off of the wall to circle around"
+					+ " Terrence. \"Sometimes I wonder why Class Fives are even kept around. How do you function without"
 					+ " psionics?\"");
 			waitForInput();
 			g.getGP().addText("\n\nShe pauses in front of Terrence. \"Maybe it would be better if we just got rid of people like"
@@ -883,7 +877,7 @@ public class Text {
 			g.getGP().addText(response);
 			if(response.equals("1")) {
 				g.getGP().addText("\n\nYou step forward and Felicia notices you. Quickly, she resumes a proper posture and glares"
-						+ " at you. \"Class Five, do you not have a job to complete?\" You stammer out an explanation, but Felicia"
+						+ " at you. \"Class Three, do you not have a job to complete?\" You stammer out an explanation, but Felicia"
 						+ " is already storming away. \"Let this be your warning,\" she says, and leaves it at that.");
 				waitForInput();
 				g.getGP().addText("\n\nYou shiver despite the heat and glance at Terrence. He glances at you for a brief second"
@@ -892,63 +886,22 @@ public class Text {
 				waitForInput();
 				return;
 			}
-			g.getGP().addText("\n\n\"Maybe it would be better that way.\"");
-			waitForInput();
-			g.getGP().addText("\n\n\"Class Eight are you listening to me?\" Felicia suddenly yells. She wrenches the mop out of the"
+			g.getGP().addText("\n\nIn the corner, a monster growls and pounds against its cage."
+			        + " \"Class Five are you listening to me?\" Felicia suddenly yells. She wrenches the mop out of the"
 					+ " surprised Terrence's hands and he takes a step backward to avoid being hit by the cleaning instrument."
-					+ " Felicia tosses it behind her and you cover your mouth, squeezing a little farther back into the shadows.");
+					+ " The monster growls and pounds harder against the cage. The door gives way.");
 			waitForInput();
-			g.getGP().addText("\n\n\"I wish you could understand one ounce of how difficult this is for me,\" Felicia grimaces,"
-					+ " biting her lip and suddenly backing away. \"Don't you realize you're hurting me?\"");
+			g.getGP().addText("\n\nIt's over in a monment. Felicia steps out of the way and watches. She could stop the monster,"
+			        + " but she chooses not to. You could stop it, but you're frozen with fear. Terrence can't stop it. There is"
+					+ " a horrible crunch, and for a moment, Terrence is wide-eyed with terror and shock. The next, he"
+					+ " is missing a few vital organs. It's not a pretty sight.");
 			waitForInput();
-			g.getGP().addText("\n\n\"Ma'am, I-\""
-					+ " \"Get back to work!\" she screams.");
+			g.getGP().addText("\n\nFelicia screams. Blasting the monster into the wall, she screams and bolts away.");
 			waitForInput();
-			g.getGP().addText("\n\nA psychic bolt shoots out of Felicia's forehead and launches Terrence into the wall. There is"
-					+ " a horrible crack, and for a moment, Terrence is wide-eyed with dizzyness and shock. The next, you're"
-					+ " staring at a wall covered in internal fluids. Felicia screams and covers her mouth, and then the"
-					+ " telekinetic blast reverses and she is holding him, clutching him, and weeping. She guides his hands"
-					+ " to her face, holding him upright like a puppet with her mental powers. She gives him one final, chaste"
-					+ " kiss, and then throws Terrence's lifeless body off of her and screams.");
+			g.getGP().addText("\n\nWhen people gather to asses the damage, they're glad that a Class Five was the only loss."
+					+ " It could have been a whole lot worse. The monster could have killed someone actually useful.");
 			waitForInput();
-			do {
-				g.getGP().addText("\n\n1: Tell someone");
-				g.getGP().addText("\n2: Keep watching");
-				g.getGP().addText("\nWhat will you do? ");
-				response = g.getGP().getResponse();
-			} while(!response.equals("1") && !response.equals("2"));
-			g.getGP().addText(response);
-			if(response.equals("1")) {
-				g.getGP().addText("\n\nShakily, you back away, hoping that Felicia doesn't notice you. She runs in the other direction,"
-						+ " passing by you without a second glance.");
-				waitForInput();
-				g.getGP().addText("\n\nWhen her story comes out, that she was attacked and had only been defending herself, there is"
-						+ " something to counter it. With your insistence, matters aren't so quick to be closed, and after some"
-						+ " poking around, the truth may be revealed.");
-				waitForInput();
-				g.getGP().addText("\n\nThe law will protect you from Felicia, but you still fear for your safety. If she's already"
-						+ " getting in this much trouble, what's a little more?");
-				waitForInput();
-				g.getGP().addText("\n\nIf it's one small comfort, Misty listens to your every word about what happened. Her twitterings"
-						+ " are low and mournful, and tears decorate her face constantly.");
-				waitForInput();
-				g.getGP().addText("\n\nYou may not have saved Terrence, but you brought justice to his death. In the wake of this"
-						+ " tragic event, Misty looks to you for comfort.");
-				waitForInput();
-				points[4] = 0;
-				points[1]++;
-				return;
-			}
-			g.getGP().addText("\n\nFelicia screams. Blasting the lifeless janitor back into the wall, she screams and bolts away.");
-			waitForInput();
-			g.getGP().addText("\n\nWhen her superiors hear her side of the story, it's the only side they hear. Terrence was the"
-					+ " attacker and Felicia was fighting back to defend herself. The psychic burst produced in her fear ended up"
-					+ " being larger than it had been intended to be. Murmurs of \"dirty Class Eight\" flutter through the crowd.");
-			waitForInput();
-			g.getGP().addText("\n\nMaybe the authorities realize that this wasn't what happened. But the case is closed with this"
-					+ " as the decision. Felicia leaves unblemished.");
-			waitForInput();
-			g.getGP().addText("\n\nAs for Misty, she cries and cries.");
+			g.getGP().addText("\n\nMisty, however, is devastated.");
 			waitForInput();
 		} catch (InterruptedException e) {}
 		points[4] = 0;
@@ -990,7 +943,7 @@ public class Text {
 			}
 			waitForInput();
 			g.getGP().addText("\n\nHe sighs and turns away again. \"Look, I think I get what you're looking for,\" he says. \"These"
-					+ " things never work. You’re a Class Five and I’m, well, I’m a Class Eight. There’s just too much of a"
+					+ " things never work. You’re a Class Three and I’m, well, I’m a Class Five. There’s just too much of a"
 					+ " power difference here. Do you understand?\"");
 			waitForInput();
 			do {
@@ -1005,11 +958,12 @@ public class Text {
 				g.getGP().addText("\n\n\"Thank you.\" He looks relieved.");
 			}
 			else {
-				System.out.print("He folds his arms. \"Tell me one person you know who wouldn't think you're digging through the"
-						+ " trash by hanging out with a Class Eight. The fact is, you could force me to do just about whatever" 
-						+ " with your psychic control, and there’s really not much I can do to stop it. I like you, really, and"
-						+ " you don’t seem the type to go around hurting people, but I’ve just seen too many bad situations"
-						+ " to want to jump into a relationship right away.\"");
+				System.out.print("He folds his arms. \"Tell me one person you know who wouldn't think you're pretty trashy"
+						+ " for hanging out with a Class Five. The fact is, you'll always outrank me in every way. You make"
+						+ " more money, you can get any job you like, you can walk down the street and feel safe...you name it."
+						+ " And me? I'll only ever get a job out of 'equal opportunity' pity. Not to mention that you could force" 
+						+ " me to do just about whatever with your psychic control, and there’s really not much I can do to stop it."
+						+ " I like you, really, but I’ve just seen too many bad situations to want to jump into a relationship right away.\"");
 			}
 			waitForInput();
 			g.getGP().addText("\n\nYou leave to walk back to your bus stop, but something makes you turn back. \"Can we at least"
@@ -1020,13 +974,13 @@ public class Text {
 			waitForInput();
 			g.getGP().addText("\n\nA bus drives by, its headlights illuminating the street with a split second of brightness."
 					+ " Terrence closes his eyes. \"First I get all chatty with a killer monster, and now here I am, making" 
-					+ " friends with a Class Five. I must really have a death wish. You sure you still want to be friends with"
+					+ " friends with a Class Three. I must really have a death wish. You sure you still want to be friends with"
 					+ " a guy like me?\"");
 			waitForInput();
-			g.getGP().addText("\n\nHeck yes. This is the one moment that all of the straight girls have been waiting for. There"
+			g.getGP().addText("\n\nHeck yes. This is the one moment you've certainly been waiting for. There"
 					+ " is absolutely no option to say no to this friendship.");
 			waitForInput();
-			g.getGP().addText("\n\nIt's time to seduce the janitor.");
+			g.getGP().addText("\n\nIt's time to befriend the janitor.");
 			waitForInput();
 			g.getGP().addText("\n\n\"Hey, um, if you aren't doing anything tonight, do you want to go to the bar together?\" He"
 					+ " pauses. \"My treat,\" he adds.");
@@ -1035,7 +989,7 @@ public class Text {
 					+ " EXTREMELY awkward.");
 			waitForInput();
 			g.getGP().addText("\n\nThe bus arrives, and you both get on. There's one other person sitting in it, a haggard Class"
-					+ " Eight man who coughs to the side before going back to picking at his frayed sun jacket. Terrence glances"
+					+ " Five man who coughs to the side before going back to picking at his frayed sun jacket. Terrence glances"
 					+ " at you. \"Let's sit here?\" he says, gesturing toward a seat closer to the front. You take it, and he"
 					+ " fills the one next to you.");
 			waitForInput();
@@ -1045,8 +999,8 @@ public class Text {
 			g.getGP().addText("\n\nTerrence remains quiet. Every once in a while, he'll glance behind him and then go back to"
 					+ " watching the driver. After a little while, he reaches past you to pull the stop cord. \"This is it.\"");
 			waitForInput();
-			g.getGP().addText("\n\nIt's probably the smallest bar you've ever seen. The neon lights are way too bright, and the"
-					+ " Class Five behind the counter looks like he might have had a few drinks himself. It's not crowded, at"
+			g.getGP().addText("\n\nIt's probably the ugliest bar you've ever seen. The neon lights are way too bright, and the"
+					+ " Class Four behind the counter looks like he might have had a few drinks himself. It's not crowded, at"
 					+ " least, and you and Terrence find an empty booth easily enough. He gets up and stands next to the table"
 					+ " like a sort of waiter. \"Can I take your order?\" he says in a mock proper accent.");
 			waitForInput();
@@ -1054,7 +1008,7 @@ public class Text {
 				g.getGP().addText("\n\n1: Something cheap");
 				g.getGP().addText("\n2: Something expensive");
 				g.getGP().addText("\n3: Nothing");
-				g.getGP().addText("\nWhat will you say? ");
+				g.getGP().addText("\nWhat will you pick? ");
 				waitForInput();
 				response = g.getGP().getResponse();
 			} while(!response.equals("1") && !response.equals("2") && !response.equals("3"));
@@ -1081,7 +1035,7 @@ public class Text {
 			do {
 				waitForInput();
 				g.getGP().addText("\n\nAsk something.");
-				g.getGP().addText("\n1: Are you scared at your job?");
+				g.getGP().addText("\n1: Are you scared of monsters?");
 				g.getGP().addText("\n2: What is your favorite food?");
 				g.getGP().addText("\n3: How is your family?");
 				g.getGP().addText("\n4: What fabulously mysterious things do you do when you're not at work?");
@@ -1090,8 +1044,9 @@ public class Text {
 				waitForInput();
 				response = g.getGP().getResponse();
 				if(response.equals("1")) {
-					g.getGP().addText("\n\n\"Not really.\" He shrugs. \"I mean, it could be worse. At least there's a containment"
-							+ " cage between us and the monsters, right?\"");
+					g.getGP().addText("\n\n\"It's odd, but, not really.\" He shrugs. \"I mean, it could be worse. At least there's a containment"
+							+ " cage between us and the monsters, right? And it's not like they treat me any differently from other folks."
+							+ " They'll eat all of us just the same.\" He bites his lip.");
 				}
 				else if(response.equals("2")) {
 					g.getGP().addText("\n\nTerrence thinks for a moment. \"Berry muffin breakfast food bars,\" he decides. \"The"
@@ -1099,7 +1054,7 @@ public class Text {
 				}
 				else if(response.equals("3")){
 					g.getGP().addText("\n\n\"Um, I guess they're okay,\" he shrugs, and glances at the bartender. \"I mean, it's"
-							+ " really just my aunt and me at this point. And my aunt's a Class Seven, so it's really just me.\"");
+							+ " really just my aunt and me at this point. And my aunt's a Class Four, so it's really just me.\"");
 				}
 				else if(response.equals("4")){
 					g.getGP().addText("\n\n\"Fabulously mysterious?\" He laughs. \"Not much, honestly. I guess I like to walk in the"
@@ -1115,7 +1070,7 @@ public class Text {
 			if(terPoints >= 1)
 				points[4]++;
 			do {
-				g.getGP().addText("\n\n1: Go with him.");
+				g.getGP().addText("\n\n1: Follow him.");
 				g.getGP().addText("\n2: Head home. It's pretty late, after all.");
 				g.getGP().addText("\nWhat will you say? ");
 				waitForInput();
@@ -1144,7 +1099,7 @@ public class Text {
 				waitForInput();
 				do {
 					g.getGP().addText("\n\n1: Quickly apologize and attempt to ammend the situation.");
-					g.getGP().addText("\n2: No, I've started this and I have to take it all the way.");
+					g.getGP().addText("\n2: No, I came here to commit class genocide and I have to take it all the way.");
 					g.getGP().addText("\nWhat will you do? ");
 					waitForInput();
 					response = g.getGP().getResponse();
@@ -1159,12 +1114,12 @@ public class Text {
 					return;
 				}
 				else {
-					g.getGP().addText("\n\n\"I hate Class Eights, especially you, and I am going to make you suffer now.\"");
+					g.getGP().addText("\n\n\"I hate Class Fives, especially you, and I am going to make you suffer now.\"");
 					waitForInput();
 					g.getGP().addText("\n\nYou see the color drain out of Terrence's face. And you get blasted with"
 							+ " approximately one can full of pepper spray.");
 					waitForInput();
-					g.getGP().addText("\n\nIf you were a Class Six or Seven, he'd have probably gotten away, but your psychic"
+					g.getGP().addText("\n\nIf you were a Class Four, he'd have probably gotten away, but your psychic"
 							+ " powers have a pretty good reach.");
 					waitForInput();
 					g.getGP().addText("\n\nYou have now killed one janitor.");
@@ -1193,7 +1148,8 @@ public class Text {
 					+ " both get some sleep.\"");
 			waitForInput();
 			g.getGP().addText("\n\nHe starts to close the door, but then he pauses. \"Would you mind giving me a quick call when"
-					+ " you get home, just so I know you made it all right?\" he asks.");
+					+ " you get home, just so I know you made it all right?\" he asks. \"I-I mean, obviously no one would dare"
+					+ " attack you, but, er, just in case?\"");
 			waitForInput();
 			g.getGP().addText("\n\nYou trade numbers and then head for home. The brightest stars are visible above you, and all"
 					+ " seems right with the world.");
@@ -1204,19 +1160,19 @@ public class Text {
 	public static void endTer(Visuals g, String name) {
 		try {
 			g.getGP().addText("\n\n\"Hey! Get away from them!\" You and the monster both turn, surprised, and see Terrence. He's"
-					+ " brandishing a broom and standing next to Misty, who is surrounded by fluttering blue butterflies.");
+					+ " brandishing a broom and standing next to Misty, who is surrounded by fluttering white butterflies.");
 			waitForInput();
 			g.getGP().addText("\n\nYou have to admit, your rescue party is kind of underwhelming.");
 			waitForInput();
 			g.getGP().addText("\n\nThis opinion, of course, immediately changes once those butterflies swarm the attacking monster,"
-					+ " latching onto it and freezing it until it howls. The good janitor stares awkwardly at that Misty girl,"
-					+ " but he turns to you. \"Are you all right, " + name + " ?\" he asks.");
+					+ " latching onto it and biting it until it howls. The good janitor stares awkwardly at that Misty girl,"
+					+ " but he turns to you. \"Are you all right, " + name + "?\" he asks.");
 			waitForInput();
 			g.getGP().addText("\n\nWhen your answer is affirmative, he grabs you with one hand and Misty with the other, and the three"
 					+ " of you take off running. He knows his way around, luckily, and soon you are all free.");
 			waitForInput();
-			g.getGP().addText("\n\nThe escape is bittersweet, however. When the portal opens and Misty chirps her goodbye, you wonder"
-					+ " if you will ever see her again. You wonder where in this vast world she might be.");
+			g.getGP().addText("\n\nThe escape is bittersweet, however. When you reach the surface and Misty chirps her goodbye, you wonder"
+					+ " if you will ever see her again. You wonder where in this vast world she might be going.");
 			waitForInput();
 			g.getGP().addText("\n\nTerrence seems to share your feelings. He turns to you and gives a little half smile, trying to"
 					+ " lighten the sadness. You return it. Misty may be gone, but at least you still have Terrence.");
@@ -1281,7 +1237,7 @@ public class Text {
 						+ " of them is here, of all places! Have you met Sirena yet? She looks a lot like me, but I think I have"
 						+ " prettier hair. Don't tell her, though! She gets so jealous...\"");
 				waitForInput();
-				g.getGP().addText("\n\nIt's interesting to hear all about Merina's extended family. She even has some good stories"
+				g.getGP().addText("\n\nIt's interesting to hear all about Merina's highly extended family. She even has some good stories"
 						+ " in among the happy chattering. You really enjoy your work.");
 				points[2]++;
 			}
@@ -1324,7 +1280,7 @@ public class Text {
 				else {
 					daysSpent[3]++;
 					g.getGP().addText("\n\n\"Yeesh, at least someone has a brain around here,\" the other monster sneers. She"
-							+ " turns to you. \"I'm Prismec. You have a name? " + name + " , huh? That's kinda cute. Don't go"
+							+ " turns to you. \"I'm Prismec. You have a name? " + name + ", huh? That's kinda cute. Don't go"
 							+ " prancin' around thinkin' you're so great, though.\"");
 					waitForInput();
 					g.getGP().addText("\n\nShe tosses her head and in a smooth sweep, her hair turns neon pink. \"You're still here? Whatcha"
@@ -1782,7 +1738,7 @@ public class Text {
 			}
 			waitForInput();
 			g.getGP().addText("\n\nPrismec creeps down the hall. She turns back to make sure you're following, and her clothes"
-					+ " melt into those of a Class Six. She grins.");
+					+ " melt into those of a Class Four. She grins.");
 			waitForInput();
 			g.getGP().addText("\n\nThe hall branches just up ahead. Prismec produces a spool of thread and hands you one end of"
 					+ " it. \"Tape it to the wall on your side,\" she instructs you, measuring about a foot above the ground."
@@ -1790,7 +1746,7 @@ public class Text {
 			waitForInput();
 			g.getGP().addText("\n\nSomeone's coming.");
 			waitForInput();
-			g.getGP().addText("\n\nHeart pounding in anticipation, you peek out to see who it is, and oh gosh, it's a Class Four"
+			g.getGP().addText("\n\nHeart pounding in anticipation, you peek out to see who it is, and oh gosh, it's a Class Three"
 					+ " researcher. Her arms are laden with a small cage, in which rests a fuzzy monster.");
 			waitForInput();
 			do {
@@ -1803,7 +1759,7 @@ public class Text {
 			g.getGP().addText(response);
 			if(response.equals("1")) {
 				g.getGP().addText("\n\n\"Hi! Excuse me, but I think someone was looking for...\" You glare at Prismec and she"
-						+ " rolls her eyes but disables the trap. The Class Four looks at you, a little confused, and waits"
+						+ " rolls her eyes but disables the trap. The Class Three looks at you, a little confused, and waits"
 						+ " for you to continue.");
 				waitForInput();
 				g.getGP().addText("\n\n\"Never mind.\"");
@@ -1950,7 +1906,7 @@ public class Text {
 			g.getGP().addText("\n\nAnyway, Prismec rolls her eyes and grins at you. \"Well, well. It looks like SOME damsel's"
 					+ " in distress. You're lucky I happened to be in town, kiddo. Now come on, let's get outta this mess.\"");
 			waitForInput();
-			g.getGP().addText("\n\nShe turns into one heck of a mare and tosses her chesnut mane. \"Do you ride? No? First"
+			g.getGP().addText("\n\nShe turns into one heck of a mare and tosses her rainbow mane. \"Do you ride? No? First"
 					+ " time for everything, then,\" she snorts.");
 			waitForInput();
 			g.getGP().addText("\n\nYou climb on, and Prismec more or less charges up a hundred flights of stairs. Daylight is streaming"
@@ -2018,13 +1974,13 @@ public class Text {
 					+ " questions to the best of your ability. Question one: What color can Misty's butterflies turn?\"");
 			waitForInput();
 			g.getGP().addText("\n1: Red");
-			g.getGP().addText("\n2: Blue");
+			g.getGP().addText("\n2: White");
 			g.getGP().addText("\n3: Green");
 			g.getGP().addText("\n4: Yellow");
 			g.getGP().addText("\nWhat will you say? ");
 			waitForInput();
 			response = g.getGP().getResponse();
-			if(response.equals("2")) {
+			if(response.equals("1")) {
 				g.getGP().addText("\nCorrect. ");
 				points ++;
 			}
