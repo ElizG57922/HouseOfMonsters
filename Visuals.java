@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.text.DefaultCaret;
 
 public class Visuals extends JFrame{	
 	private GraphicPanel gp;
@@ -50,10 +51,12 @@ public class Visuals extends JFrame{
 			textfield.setWrapStyleWord(true);
 			scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 			scrollPane.setPreferredSize(new Dimension(250, 250));
+			DefaultCaret caret = (DefaultCaret) textfield.getCaret();
+			caret.setUpdatePolicy(DefaultCaret.OUT_BOTTOM);
 
 
 
-			choice = new JTextField("");
+			choice = new JTextField("Type Choice Here");
 			add(choice);
 			JButton nextButton = new JButton("Next");
 			nextButton.addActionListener(
@@ -87,3 +90,4 @@ public class Visuals extends JFrame{
 
 	}
 }
+
