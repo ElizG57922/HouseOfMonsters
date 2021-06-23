@@ -27,7 +27,7 @@ public class Text {
 			//               S  M  I  P  T
 			int [] points = {0, 0, 0, 0, 0};
 			int [] daysSpent = new int[4];
-
+			
 			intro(g);
 			g.getGP().addText("\n\nEnter your name: ");
 			waitForInput();
@@ -1517,17 +1517,20 @@ public class Text {
 			g.getGP().addText("\nI need you to give me a noun: ");
 			waitForInput();
 			String noun = g.getGP().getResponse();
+			g.getGP().addText(noun);
 			g.getGP().addText("\nNow an adjective: ");
 			waitForInput();
 			String adj = g.getGP().getResponse();
+			g.getGP().addText(adj);
 			g.getGP().addText("\nAnd a verb: ");
 			waitForInput();
 			String verb = g.getGP().getResponse();
+			g.getGP().addText(verb);
 			g.getGP().addText("\n\nShe giggles. \"I have a story for you!\"");
 			waitForInput();
-			g.getGP().addText("\n\n\"Once upon a time, there was a " + adj + "  trout who loved to swim. It decided that it was going"
-					+ " to enter a swimming contest! It packed its favorite " + noun + "  and went to the stadium. There were"
-					+ " a lot of other fish there! But our hero could " + verb + "  faster than all of them, and it won! Yay!\"");
+			g.getGP().addText("\n\n\"Once upon a time, there was a " + adj + " trout who loved to swim. It decided that it was going"
+					+ " to enter a swimming contest! It packed its favorite " + noun + " and went to the stadium. There were"
+					+ " a lot of other fish there! But our hero could " + verb + " faster than all of them, and it won! Yay!\"");
 			waitForInput();
 			g.getGP().addText("\n\n...");
 			waitForInput();
@@ -1603,7 +1606,7 @@ public class Text {
 	public static void day4PrisPath(Visuals g, int[] points, int[] daysSpent, String name) {
 		daysSpent[3]++;
 		try {
-			g.getGP().addText("\n\n\"Hey. Hey, person. " + name + " , I'm talking to you. Come'ere.\" Prismec is calling you over.");
+			g.getGP().addText("\n\n\"Hey. Hey, person. " + name + ", I'm talking to you. Come'ere.\" Prismec is calling you over.");
 			waitForInput();
 			g.getGP().addText("\n\n\"I heard about this really old and awful game the other day,\" she says. \"I need someone"
 					+ " to play it with me so I can see how stupid it is.\"");
@@ -1612,18 +1615,21 @@ public class Text {
 			int guess;
 			int count = 0;
 
-			g.getGP().addText("\nPick an upper bound number or something.\"Upper bound: ");
+			g.getGP().addText("\nPick an upper bound number or something.\" Upper bound: ");
+			waitForInput();
 			int upperBound = Integer.parseInt(g.getGP().getResponse());
+			g.getGP().addText(""+upperBound);
 			if(upperBound <= 100) {
 				g.getGP().addText("\n\nNot so very quietly, Prismec whispers, \"Lightweight.\"");
 				waitForInput();
 			}
-			g.getGP().addText("\n\n\"Great. I'm thinking of a number between 0 and " + upperBound + " .\"");
+			g.getGP().addText("\n\n\"Great. I'm thinking of a number between 0 and " + upperBound + ".\"");
 			waitForInput();
 			int target = (int)(Math.random()*upperBound);
 			g.getGP().addText("\nGuess it: ");
+			waitForInput();
 			guess = Integer.parseInt(g.getGP().getResponse());
-
+			g.getGP().addText(""+guess);
 			while(!guessed) {
 				count += 1;
 				if(Math.abs(guess - target) < 0.001) {
@@ -1639,7 +1645,7 @@ public class Text {
 				guess = Integer.parseInt(g.getGP().getResponse());
 				g.getGP().addText(""+guess);
 			}
-			g.getGP().addText("\n\n\"Yep! It only took you a full " + count + "  guesses.\"");
+			g.getGP().addText("\n\n\"Yep! It only took you a full " + count + " guesses.\"");
 
 			waitForInput();
 			g.getGP().addText("\n\nPrismec shrugs. \"Meh, I'd give it a 2 outta 10. Let's say we never play this again?\"");
